@@ -4,7 +4,7 @@ const librosContainer = document.getElementById('libros-container');
 
 window.addEventListener("DOMContentLoaded", async (e) => {
     onGetLibros((querySnapshot)=>{
-        let html = '';
+        let html = "";
         querySnapshot.forEach((doc) => {        
             const libro = doc.data();
             html += `
