@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
-import { getFirestore, addDoc, collection, getDocs, onSnapshot } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"
+import { getFirestore, addDoc, collection, getDocs,deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"
 
 const firebaseConfig = {
   apiKey: "AIzaSyBTjVpCHlqhK6xLUd_F5EOZBVc9ElPnDzQ",
@@ -23,3 +23,6 @@ export const saveLibro = (titulo, autor, editorial, isbn, fecha) =>
 //lista libros
 export const onGetLibros = (callback) => 
     onSnapshot(collection(db,'libros'),callback);
+
+//borrar libro
+export const deleteLibro = (id) => deleteDoc(doc(db, "libros", id));
